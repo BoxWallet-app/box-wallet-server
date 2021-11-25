@@ -92,7 +92,7 @@
         width: 100%;
         text-align: center;
         left: 0;
-        position: fixed;
+        /*position: fixed;*/
         display: flex;
         align-items: center; /*定义body的元素垂直居中*/
         justify-content: center; /*定义body的里的元素水平居中*/
@@ -102,6 +102,15 @@
         /*background: #f7f5f5;*/
         margin: 0 auto;
         -webkit-backdrop-filter: saturate(180%) blur(20px);
+        /*padding-bottom: constant(safe-area-inset-bottom);*/
+        /*padding-bottom: env(safe-area-inset-bottom);*/
+    }
+    .icons {
+        width: 100%;
+        text-align: center;
+        align-items: center; /*定义body的元素垂直居中*/
+        justify-content: center; /*定义body的里的元素水平居中*/
+        /*background: #f7f5f5;*/
         /*padding-bottom: constant(safe-area-inset-bottom);*/
         /*padding-bottom: env(safe-area-inset-bottom);*/
     }
@@ -170,7 +179,17 @@
         <p class="title">Open the magic door of blockchain with infinite possibilities.</p>
         <p class="con">A decentralized open-source wallet that includes functions of multichain wallets, domain naming system, games, smart contracts, communication, browser and more.</p>
 
+        <div style=" display: flex;
+        align-items: center; /*定义body的元素垂直居中*/
+        justify-content: center; margin-top: 20px">
+
+            <a  href="https://t.me/boxaepp"><img src="../static/img/telegram.png" width="25px"></a>
+            <a  href="https://twitter.com/box_wallet_app" style="margin-left: 20px"><img src="../static/img/twitter43.png" width="25px"></a>
+            <a  href="https://qm.qq.com/cgi-bin/qm/qr?k=jnFWHm16iJM888smlrKE5PUkbshkdUT5&authKey=dGXI17gaZNaGwlDfLxFt1vWYqQLrvxrzGZiEMWgSKytSjWabHnSLz/f/PG9EQsre&noverify=0" style="margin-left: 20px"><img src="../static/img/qq.png" width="25px"></a>
+        </div>
         <div style="height: 50px;"></div>
+
+
 
         <div class="buttons footer">
 
@@ -213,7 +232,7 @@
                 if(isgoogle){
                     window.location.href = "https://play.google.com/store/apps/details?id=com.aepp.box";
                 }else{
-                    window.location.href = "https://boxaepp.oss-cn-hangzhou.aliyuncs.com/com.aepp.box_release_v3.1.0_20211101191253.apk";
+                    window.location.href = "https://boxaepp.oss-cn-hangzhou.aliyuncs.com/com.aepp.box_release_v3.2.1_20211118133612.apk";
                 }
 
 

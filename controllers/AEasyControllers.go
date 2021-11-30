@@ -134,6 +134,11 @@ func (c *TokenRecordController) Post() {
 }
 
 func (c *HomeController) Get() {
+
+	source, _ := ioutil.ReadFile("conf/android_download_url")
+
+	c.Data["android_download_url"] = string(source)
+
 	if utils.IsMobile(c.Ctx.Input.Header("user-agent")) {
 		c.TplName = "index_mobile.html"
 	} else {

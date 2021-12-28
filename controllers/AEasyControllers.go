@@ -12,6 +12,9 @@ import (
 type BlockTopController struct {
 	BaseController
 }
+type ApiPriceController struct {
+	BaseController
+}
 type HomeController struct {
 	BaseController
 }
@@ -71,6 +74,24 @@ func (c *BlockTopController) Post() {
 		url.Values{
 			"app_id": {beego.AppConfig.String("AEASY::appId")},
 		})
+	if err != nil {
+		c.ErrorJson(-500, err.Error(), JsonData{})
+		return
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		c.ErrorJson(-500, err.Error(), JsonData{})
+		return
+	}
+	c.Ctx.WriteString(string(body))
+}
+
+func (c *ApiPriceController) Get() {
+	ids := c.GetString("ids")
+	t := c.GetString("type")
+	resp, err := http.Get("https://api.coingecko.com/api/v3/simple/price"+ "?ids=" + ids + "&vs_currencies=" + t)
 	if err != nil {
 		c.ErrorJson(-500, err.Error(), JsonData{})
 		return
